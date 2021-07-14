@@ -47,7 +47,7 @@ body{
   background-image: url(https://media.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy.gif);
   background-size: cover;
   
-  
+  color: white;
   
   height: 100vh;
   padding:0;
@@ -66,3 +66,54 @@ form{
 
   color: white;
 }
+img{
+
+  display: inline-block;
+  width: 70;
+  height: 70px;
+  transform: scaleY(1.5);
+}
+a{
+  color: cyan;
+
+  transform :0.5s;
+}
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: cyan;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+
+
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+  color: white;
+}
+
+h2 { color: white; font-family: 'Source Sans Pro', sans-serif; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
