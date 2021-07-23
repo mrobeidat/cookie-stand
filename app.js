@@ -97,11 +97,16 @@ function mkheader() {
 }
 
 Shop.prototype.render = function () {
+    // create row (tr)
     let dataRow = document.createElement('tr')
+    // append to table
     table.appendChild(dataRow)
 
+    // create 
     let NameTd = document.createElement('td')
+    // append to dataRow
     dataRow.appendChild(NameTd);
+    // add text to the td
     NameTd.textContent = this.location;
 
     for (let i = 0; i < hours.length; i++) {
@@ -126,7 +131,7 @@ function mkFooter() {
     firstTh.textContent = 'Total';
 
 
-let totalofTostals =0;
+    let totalofTostals = 0;
 
     for (let i = 0; i < hours.length; i++) {
 
@@ -135,26 +140,25 @@ let totalofTostals =0;
         let totalForEachHour = 0;
         //console.log(totalForEachHour);
         for (let j = 0; j < shops.length; j++) {
-          // console.log(shops[j].cookiesperHour[i]);
-           totalForEachHour += shops[j].cookiesperHour[i];
-           totalofTostals += shops[j].cookiesperHour[i];
+            // console.log(shops[j].cookiesperHour[i]);
+            totalForEachHour += shops[j].cookiesperHour[i];
+            totalofTostals += shops[j].cookiesperHour[i];
 
         }
         // console.log(totalForEachHour);
         let footerTh = document.createElement('th');
         footerRow.appendChild(footerTh);
-        footerTh.textContent=totalForEachHour;
+        footerTh.textContent = totalForEachHour;
     }
     let lastTh = document.createElement('th');
     footerRow.appendChild(lastTh);
     lastTh.textContent = totalofTostals;
-     
+
 }
 
 
 
 console.log(shops);
-mkheader();
 
 
 
@@ -167,37 +171,52 @@ form.addEventListener('submit', submitter)
 function submitter(event) {
     event.preventDefault();
     console.log(event);
-    console.log(event.target.locations.value);
 
-    let city = event.target.locations.value;
+    let city =( event.target.locations.value);
     // console.log(city);
 
-    let min = event.target.minCustomers.value;
-    // console.log(min);
-
-    let max = event.target.maxCustomers.value;
+    let min = Number(event.target.minCustomers.value);
     // console.log(max);
+    let max = Number(event.target.maxCustomers.value);
 
-    let avg = event.target.avgCookies.value;
+    let avg = parseFloat(event.target.avgCookies.value);
     // console.log(avg);
 
-    let addshops = new Shop(city, min, max, avg);
-    addshops.gitCus();
-    addshops.calcCookiesperHour();
-    addshops.render();
+    let addedshops = new Shop(city, min, max, avg);
+    console.log(addedshops);
 
-    //addshops.avgCookies();
+    
 
-    console.log(addshops);
+    console.log(shops);
+
+    table.textContent = "";
+
+    mkheader();
+    for (let i = 0; i < shops.length; i++) {
+        shops[i].cookiesperHour = [];
+        shops[i].customerperHour = [];
+        shops[i].totalCookiesPerDay = 0;
+    
+    
+        shops[i].gitCus();
+        shops[i].calcCookiesperHour();
+        shops[i].render();
+    
+    }
+   
+    mkFooter();
+
 }
 
 
-for (let i = 0; i < shops.length; i++) {
-
-    shops[i].gitCus();
-    shops[i].calcCookiesperHour();
-    shops[i].render();
-}
 
 
-mkFooter();
+
+
+
+
+  // console.log(shops);
+    // addedshops.gitCus();
+    // addedshops.calcCookiesperHour();
+    // addedshops.render();
+    // addedshops.avgCookies();

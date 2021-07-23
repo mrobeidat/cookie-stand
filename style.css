@@ -9,6 +9,7 @@ table{
 color: aliceblue;
 margin-left: auto;
 margin-right: auto;
+font-family:'Times New Roman', Times, serif;
 }
 
 
@@ -20,6 +21,7 @@ table ,tr ,th{
   width: 120px;
   padding:8px;
   color: aliceblue;
+  background-image: url(https://t4.ftcdn.net/jpg/01/91/22/51/360_F_191225191_Ehl3dpuV1PRgGj4VwfDesUIVUVlXuhpz.jpg);
 
 } 
 input[type=text] {
@@ -33,19 +35,31 @@ input[type=number] {
 
 input[type=submit]{
 
-  background-color: blue;
+   /* background-color: blue;
   border: none;
   color: white;
   padding: 16px 32px;
   text-decoration: none;
-  margin: 4px 2px;
+   */
+   margin: 4px 2px;
   cursor: pointer;
- 
+color: black;
+  width: 150px;
+  height: 50px;
+  border:none;
+  border:solid 2px white;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.384);
+  font-size: 25px;
+}
+input[type=submit]:hover {
+  background:cyan;
+  color:white; 
 }
 
 body{
-  background-image: url(https://media.giphy.com/media/l5JbspfwZ0yjHjlJ0K/giphy.gif);
-  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1487266659293-c4762f375955?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+  background-size:cover;
   
   color: white;
   
@@ -53,6 +67,7 @@ body{
   padding:0;
   margin:0;
 }
+
 h1{
 
   color: white;
@@ -62,8 +77,6 @@ h2{
   color: white;
 }
 form{
-
-
   color: white;
 }
 img{
@@ -72,10 +85,12 @@ img{
   width: 70;
   height: 70px;
   transform: scaleY(1.5);
+  display: inline;
+  margin: 20px;
 }
 a{
   color: cyan;
-
+  margin-bottom: 20px;
   transform :0.5s;
 }
 /* unvisited link */
@@ -96,6 +111,7 @@ a:hover {
 /* selected link */
 a:active {
   color: blue;
+  
 }
 
 
@@ -109,6 +125,7 @@ a:link, a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  
 }
 
 a:hover, a:active {
@@ -117,5 +134,65 @@ a:hover, a:active {
 }
 
 
-h2 { color: white; font-family: 'Source Sans Pro', sans-serif; font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; }
+.color
+ { 
+   color: white; font-family:  "Sofia", sans-serif, sans-serif; 
+   font-size: 28px; font-weight: 400; line-height: 32px; margin: 0 0 24px; 
+   background-color: black;
+   width: 40%;
+padding: 10px; }
+
+
+h1{
+
+  font-family: "Trirong", serif;
+  color:rgb(190, 0, 0);
+}
+label ,.locations{
+
+  color: aqua;
+}
+form {
+
+  background-image: url(https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  width: 50%;
+  position: relative;
+}
+
+.first-el{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.second-el{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.third-el{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.forth-el{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.index-body{
+
+  background-image: url(https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+}
+ul, li {
+
+  font-size: large;
+
+}
+
+
 
