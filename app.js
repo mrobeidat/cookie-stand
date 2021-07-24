@@ -66,7 +66,6 @@ let Lima = new Shop('Lima', 2, 16, 4.6);
 
 
 
-
 let parent = document.getElementById('parent');
 console.log(parent);
 
@@ -96,6 +95,7 @@ function mkheader() {
     Lth.textContent = 'Daily location total';
 }
 
+
 Shop.prototype.render = function () {
     // create row (tr)
     let dataRow = document.createElement('tr')
@@ -117,6 +117,7 @@ Shop.prototype.render = function () {
     let TotalTd = document.createElement('td')
     dataRow.appendChild(TotalTd);
     TotalTd.textContent = this.totalCookiesPerDay;
+
 
 }
 
@@ -157,22 +158,20 @@ function mkFooter() {
 }
 
 
-
 console.log(shops);
-
-
 
 
 let form = document.getElementById('form');
 
 form.addEventListener('submit', submitter)
 
-
 function submitter(event) {
-    event.preventDefault();
-    console.log(event);
 
-    let city =( event.target.locations.value);
+    event.preventDefault();
+
+    // console.log(event);
+
+    let city = (event.target.locations.value);
     // console.log(city);
 
     let min = Number(event.target.minCustomers.value);
@@ -182,41 +181,54 @@ function submitter(event) {
     let avg = parseFloat(event.target.avgCookies.value);
     // console.log(avg);
 
-    let addedshops = new Shop(city, min, max, avg);
-    console.log(addedshops);
+    let addedshop = new Shop(city, min, max, avg);
 
-    
 
-    console.log(shops);
 
-    table.textContent = "";
+    table.textContent = '';
+    // console.log(shops);
+    addedshop.gitCus();
+    addedshop.calcCookiesperHour();
+    // addedshop.render();
 
+    // console.log(addedshop);
     mkheader();
+
     for (let i = 0; i < shops.length; i++) {
-        shops[i].cookiesperHour = [];
-        shops[i].customerperHour = [];
-        shops[i].totalCookiesPerDay = 0;
-    
-    
-        shops[i].gitCus();
-        shops[i].calcCookiesperHour();
+
+        // shops[i].cookiesperHour = [];
+        // shops[i].customerperHour = [];
+        // shops[i].totalCookiesPerDay = 0;
+
+        // shops[i].gitCus();
+        // shops[i].calcCookiesperHour();
         shops[i].render();
-    
+
+
     }
-   
+
     mkFooter();
+
 
 }
 
+mkheader();
 
+for (let i = 0; i < shops.length; i++) {
 
+    shops[i].gitCus();
+    shops[i].calcCookiesperHour();
+    shops[i].render();
 
+}
 
-
-
+mkFooter();
 
   // console.log(shops);
     // addedshops.gitCus();
     // addedshops.calcCookiesperHour();
     // addedshops.render();
-    // addedshops.avgCookies();
+    // addedshops.avgCookies();.
+
+    // addedshops.gitCus();
+    // addedshops.calcCookiesperHour();

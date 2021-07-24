@@ -1,11 +1,10 @@
-table,th,td
-{
+table,th,td{
 border: 1px solid white;
 border-collapse:collapse ;
 }
 table{
 
-    border-spacing: 5px;
+border-spacing: 5px;
 color: aliceblue;
 margin-left: auto;
 margin-right: auto;
@@ -35,15 +34,10 @@ input[type=number] {
 
 input[type=submit]{
 
-   /* background-color: blue;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-   */
-   margin: 4px 2px;
+   
+  margin: 4px 2px;
   cursor: pointer;
-color: black;
+  color: black;
   width: 150px;
   height: 50px;
   border:none;
@@ -114,10 +108,9 @@ a:active {
   
 }
 
-
-
-
 a:link, a:visited {
+  font-family:'Times New Roman', Times, serif;
+  font-size: larger;
   background-color: white;
   color: black;
   border: 2px solid green;
