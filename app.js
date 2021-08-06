@@ -216,7 +216,7 @@ mkheader();
 
 for (let i = 0; i < shops.length; i++) {
 
-    shops[i].gitCus();
+    shops[i].calcCustomersPerHour();
     shops[i].calcCookiesperHour();
     shops[i].render();
 
