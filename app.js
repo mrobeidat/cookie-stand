@@ -24,7 +24,7 @@ function Shop(location, minCustomers, maxCustomers, avgCookies) {
 }
 
 
-Shop.prototype.gitCus = function () {
+Shop.prototype.calcCustomersPerHour = function () {
 
     for (let i = 0; i < hours.length; i++) {
         this.customerperHour.push(random(this.minCustomers, this.maxCustomers));
@@ -187,7 +187,7 @@ function submitter(event) {
 
     table.textContent = '';
     // console.log(shops);
-    addedshop.gitCus();
+    addedshop.calcCustomersPerHour();
     addedshop.calcCookiesperHour();
     // addedshop.render();
 
