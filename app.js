@@ -23,13 +23,11 @@ function Shop(location, minCustomers, maxCustomers, avgCookies) {
 
 }
 
-
 Shop.prototype.calcCustomersPerHour = function () {
 
     for (let i = 0; i < hours.length; i++) {
         this.customerperHour.push(random(this.minCustomers, this.maxCustomers));
     }
-    console.log(this.customerperHour)
 }
 
 Shop.prototype.calcCookiesperHour = function () {
@@ -67,7 +65,6 @@ let Lima = new Shop('Lima', 2, 16, 4.6);
 
 
 let parent = document.getElementById('parent');
-console.log(parent);
 
 let table = document.createElement('table')
 parent.appendChild(table);
@@ -77,22 +74,23 @@ function mkheader() {
     let headerRow = document.createElement('tr');
     table.appendChild(headerRow);
 
-    let Fth = document.createElement('th');
-    headerRow.appendChild(Fth);
+    let FirstTh = document.createElement('th');
+    headerRow.appendChild(FirstTh);
 
-    Fth.textContent = 'Name';
+    FirstTh.textContent = 'Name';
 
 
     for (let i = 0; i < hours.length; i++) {
-        let hoursTH = document.createElement('th')
 
-        headerRow.appendChild(hoursTH);
-        hoursTH.textContent = hours[i];
+        let hoursTh = document.createElement('th')
+
+        headerRow.appendChild(hoursTh);
+        hoursTh.textContent = hours[i];
     }
-    let Lth = document.createElement('th');
-    headerRow.appendChild(Lth);
+    let lastTh = document.createElement('th');
+    headerRow.appendChild(lastTh);
 
-    Lth.textContent = 'Daily location total';
+    lastTh.textContent = 'Daily location total';
 }
 
 
@@ -136,14 +134,12 @@ function mkFooter() {
 
     for (let i = 0; i < hours.length; i++) {
 
-        // console.log(hours[i]);
-
         let totalForEachHour = 0;
-        //console.log(totalForEachHour);
-        for (let j = 0; j < shops.length; j++) {
-            // console.log(shops[j].cookiesperHour[i]);
-            totalForEachHour += shops[j].cookiesperHour[i];
-            totalofTostals += shops[j].cookiesperHour[i];
+
+        for (let i = 0; i < shops.length; i++) {
+
+            totalForEachHour += shops[i].cookiesperHour[i];
+            totalofTostals += shops[i].cookiesperHour[i];
 
         }
         // console.log(totalForEachHour);
@@ -154,11 +150,8 @@ function mkFooter() {
     let lastTh = document.createElement('th');
     footerRow.appendChild(lastTh);
     lastTh.textContent = totalofTostals;
-
 }
 
-
-console.log(shops);
 
 
 let form = document.getElementById('form');
@@ -169,41 +162,29 @@ function submitter(event) {
 
     event.preventDefault();
 
-    // console.log(event);
 
     let city = (event.target.locations.value);
-    // console.log(city);
 
     let min = Number(event.target.minCustomers.value);
-    // console.log(max);
+
     let max = Number(event.target.maxCustomers.value);
 
     let avg = parseFloat(event.target.avgCookies.value);
-    // console.log(avg);
 
     let addedshop = new Shop(city, min, max, avg);
 
 
 
     table.textContent = '';
-    // console.log(shops);
+
     addedshop.calcCustomersPerHour();
     addedshop.calcCookiesperHour();
-    // addedshop.render();
 
-    // console.log(addedshop);
     mkheader();
 
     for (let i = 0; i < shops.length; i++) {
 
-        // shops[i].cookiesperHour = [];
-        // shops[i].customerperHour = [];
-        // shops[i].totalCookiesPerDay = 0;
-
-        // shops[i].gitCus();
-        // shops[i].calcCookiesperHour();
         shops[i].render();
-
 
     }
 
@@ -223,12 +204,3 @@ for (let i = 0; i < shops.length; i++) {
 }
 
 mkFooter();
-
-  // console.log(shops);
-    // addedshops.gitCus();
-    // addedshops.calcCookiesperHour();
-    // addedshops.render();
-    // addedshops.avgCookies();.
-
-    // addedshops.gitCus();
-    // addedshops.calcCookiesperHour();
