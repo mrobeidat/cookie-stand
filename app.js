@@ -9,7 +9,7 @@ function random(min, max) {
 }
 
 
-let shops = [];
+Shop.all = [];
 
 function Shop(location, minCustomers, maxCustomers, avgCookies) {
     this.location = location;
@@ -19,8 +19,7 @@ function Shop(location, minCustomers, maxCustomers, avgCookies) {
     this.totalCookiesPerDay = 0;
     this.cookiesperHour = [];
     this.customerperHour = [];
-    shops.push(this);
-
+    Shop.all.push(this);
 }
 
 Shop.prototype.calcCustomersPerHour = function () {
@@ -40,8 +39,6 @@ Shop.prototype.calcCookiesperHour = function () {
         this.totalCookiesPerDay += this.cookiesperHour[i];
     }
 }
-
-
 
 
 let Seattle = new Shop('Seattle', 23, 65, 6.3);
@@ -136,10 +133,10 @@ function mkFooter() {
 
         let totalForEachHour = 0;
 
-        for (let i = 0; i < shops.length; i++) {
+        for (let i = 0; i <  Shop.all.length; i++) {
 
-            totalForEachHour += shops[i].cookiesperHour[i];
-            totalofTostals += shops[i].cookiesperHour[i];
+            totalForEachHour += Shop.all[i].cookiesperHour[i];
+            totalofTostals +=  Shop.all[i].cookiesperHour[i];
 
         }
         // console.log(totalForEachHour);
@@ -182,9 +179,9 @@ function submitter(event) {
 
     mkheader();
 
-    for (let i = 0; i < shops.length; i++) {
+    for (let i = 0; i < Shop.all.length; i++) {
 
-        shops[i].render();
+        Shop.all[i].render();
 
     }
 
@@ -195,11 +192,11 @@ function submitter(event) {
 
 mkheader();
 
-for (let i = 0; i < shops.length; i++) {
+for (let i = 0; i <  Shop.all.length; i++) {
 
-    shops[i].calcCustomersPerHour();
-    shops[i].calcCookiesperHour();
-    shops[i].render();
+    Shop.all[i].calcCustomersPerHour();
+    Shop.all[i].calcCookiesperHour();
+    Shop.all[i].render();
 
 }
 
