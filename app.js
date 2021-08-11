@@ -133,10 +133,10 @@ function mkFooter() {
 
         let totalForEachHour = 0;
 
-        for (let i = 0; i <  Shop.all.length; i++) {
+        for (let j = 0; j <  Shop.all.length; j++) {
 
-            totalForEachHour += Shop.all[i].cookiesperHour[i];
-            totalofTostals +=  Shop.all[i].cookiesperHour[i];
+            totalForEachHour += Shop.all[j].cookiesperHour[i];
+            totalofTostals +=  Shop.all[j].cookiesperHour[i];
 
         }
         // console.log(totalForEachHour);
