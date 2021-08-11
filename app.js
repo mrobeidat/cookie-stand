@@ -197,7 +197,6 @@ for (let i = 0; i <  Shop.all.length; i++) {
     Shop.all[i].calcCustomersPerHour();
     Shop.all[i].calcCookiesperHour();
     Shop.all[i].render();
-
 }
 
 mkFooter();

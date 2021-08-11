@@ -12,7 +12,10 @@ font-family:'Times New Roman', Times, serif;
 }
 
 
-table ,tr ,th{
+
+
+
+table ,tr ,th,td{
 
   border: 1px solid white;
   border-collapse: collapse;
@@ -20,9 +23,12 @@ table ,tr ,th{
   width: 120px;
   padding:8px;
   color: aliceblue;
-  background-image: url(https://t4.ftcdn.net/jpg/01/91/22/51/360_F_191225191_Ehl3dpuV1PRgGj4VwfDesUIVUVlXuhpz.jpg);
+  background-image: url('https://t4.ftcdn.net/jpg/01/91/22/51/360_F_191225191_Ehl3dpuV1PRgGj4VwfDesUIVUVlXuhpz.jpg');
+  padding: 10px;
 
 } 
+
+
 input[type=text] {
   border: 2px solid red;
   border-radius: 4px;
